@@ -1,6 +1,8 @@
-package com.example.myapplication;
+package com.example.myapplication.BD;
 
 import android.content.Context;
+
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 
@@ -14,21 +16,20 @@ public class BDManager {
     public static final String SEXO_PERSONA = "sexo";
     public static final String CORREO_PERSONA = "correo";
     public static final String PROFESION_PERSONA = "profesion";
-    public static final String TABLA_PERSONA_CREATE =
-            "create table " + TABLA_PERSONA + " (" +
-                    ID_PERSONA + " integer not null, " +
-                    NOMBRE_PERSONA + " text not null, " +
-                    APELLIDO_PERSONA + " text, " +
-                    FECHANACIMIENTO_PERSONA + " text, " +
-                    DNI_PERSONA + " text, " +
-                    SEXO_PERSONA + " text, " +
-                    CORREO_PERSONA + " text, " +
-                    PROFESION_PERSONA + " text, " +
-                    "primary key (" + ID_PERSONA + "));";
+    public static final String TABLA_PERSONA_CREATE ="create table persona(_id integer not null, nombre text not null, apellido text not null,fecha_de_nacimiento text not null, dni text not null, sexo text not null,correo text not null, profesion text not null);";
+
+
     private BDConexion conexion;
     private SQLiteDatabase basededatos;
+
     public BDManager(Context context) {
         conexion = new BDConexion(context);
     }
-    public BDManager open()throws
+    public BDManager open()throws SQLException{
+        basededatos= conexion.getWritableDatabase();
+        return this;
+    }
+    public void close(){
+        conexion.close();
+    }
 }

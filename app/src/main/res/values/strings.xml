@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="guardar" />
+    <string name="cancelar" />
+    <string name="nombre_y_apellidos" />
+    <string name="permitir_comunicaciones_comerciales">Permitir Comunicaciones Comerciales</string>
+
 </resources>
+

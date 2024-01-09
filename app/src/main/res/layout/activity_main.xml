@@ -18,53 +18,67 @@
         android:textColor="#336699"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="@string/nombre_y_apellidos"
+        android:layout_marginTop="10dp"
+        android:hint="Nombre "
         android:importantForAutofill="no"
-        android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewHeader"
-        tools:ignore="TextFields,TouchTargetSizeCheck"/>
+        tools:ignore="HardcodedText,SpeakableTextPresentCheck,TextFields,TouchTargetSizeCheck,TextContrastCheck" />
+    <!-- Fecha de Nacimiento -->
+    <EditText
+        android:id="@+id/editTextApellido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="apellido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName"
+        tools:ignore="HardcodedText,TextContrastCheck,TextFields,TouchTargetSizeCheck"
+        android:autofillHints="" />
 
     <!-- Fecha de Nacimiento -->
     <EditText
         android:id="@+id/editTextDOB"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:hint="Fecha de Nacimiento"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName"
-        tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextApellido"
+        tools:ignore="HardcodedText,TextContrastCheck,TouchTargetSizeCheck"
+        android:autofillHints="" />
 
     <!-- DNI -->
     <EditText
         android:id="@+id/editTextDNI"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:hint="DNI"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDOB"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="Autofill,HardcodedText,TextFields,TouchTargetSizeCheck" />
 
     <!-- Sexo -->
     <RadioGroup
         android:id="@+id/radioGroupSexo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDNI">
@@ -73,13 +87,15 @@
             android:id="@+id/radioMale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Masculino" />
+            android:text="Masculino"
+            tools:ignore="HardcodedText" />
 
         <RadioButton
             android:id="@+id/radioFemale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Femenino" />
+            android:text="Femenino"
+            tools:ignore="HardcodedText" />
     </RadioGroup>
 
     <!-- Correo Electrónico -->
@@ -87,73 +103,74 @@
         android:id="@+id/editTextEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:hint="Correo Electrónico"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroupSexo"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="Autofill,HardcodedText,TextContrastCheck,TouchTargetSizeCheck" />
 
-    <!-- Profesión (Usando Spinner) -->
-    <Spinner
-        android:id="@+id/spinnerProfesion"
+
+    <EditText
+        android:id="@+id/editTextProfesion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
+        android:hint="Profesion"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="Autofill,HardcodedText,TextFields" />
 
     <!-- Permitir Comunicaciones Comerciales -->
     <CheckBox
         android:id="@+id/checkBoxComunicaciones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Permitir Comunicaciones Comerciales"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerProfesion"
+        android:layout_marginTop="10dp"
+        android:text="@string/permitir_comunicaciones_comerciales"
+        app:layout_constraintTop_toBottomOf="@+id/editTextProfesion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
         android:background="#4CAF50"
-        android:text="@string/guardar"
+        android:text="guardar"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxComunicaciones"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="HardcodedText,SpeakableTextPresentCheck,TextContrastCheck,VisualLintButtonSize" />
 
     <Button
-        android:id="@+id/btnCancelar"
+        android:id="@+id/btnSalir"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
         android:background="#FFC107"
-        android:text="@string/cancelar"
+        android:text="Salir"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGuardar"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/btnVerLista"
+        tools:ignore="HardcodedText,SpeakableTextPresentCheck,TextContrastCheck" />
 
     <Button
         android:id="@+id/btnVerLista"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
         android:text="Ver Lista"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCancelar"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/btnGuardar"
+        tools:ignore="HardcodedText,TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

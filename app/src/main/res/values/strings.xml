@@ -1,9 +1,15 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="guardar" />
-    <string name="cancelar" />
-    <string name="nombre_y_apellidos" />
+    <string name="inicio_sesion">Inicio de sesión</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="DNI">Dni</string>
+    <string name="Correo_Electrónico">Correo</string>
+    <string name="Profesion">Profesion</string>
+    <string name="guardar">Guardar</string>
+    <string name="salir">Salir</string>
+    <string name="verlista">Ver Lista</string>
     <string name="permitir_comunicaciones_comerciales">Permitir Comunicaciones Comerciales</string>
+    <string name="app_name" />
 
 </resources>
 
